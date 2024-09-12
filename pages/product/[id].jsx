@@ -56,7 +56,7 @@ const Index = ({data , data1}) => {
 // md:h-[calc(100vh_-_88px)]
   return (
     <div className="flex items-center  gap-5 py-20 flex-wrap justify-center">    
-  {/* {data1 && data1.map((item, index)=>{
+  {data1 && data1.map((item, index)=>{
 
     return (<div className="mt-5 mx-4">
       <div className="p-6 bg-secondary text-white rounded-[5px]" key={index}>
@@ -82,7 +82,7 @@ const Index = ({data , data1}) => {
         />
       </div>
     </div>)
-  })} */}
+  })}
     
 
       {/* <div className="relative md:flex-1 md:w-[80%] md:h-[80%] w-36 h-36 mx-auto">
