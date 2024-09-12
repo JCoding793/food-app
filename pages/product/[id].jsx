@@ -52,7 +52,8 @@ const Index = ({ food }) => {
       })
     );
   };
-  console.log(food);
+  // console.log(food);
+
 
   return (
     <div className="flex items-center md:h-[calc(100vh_-_88px)] gap-5 py-20 flex-wrap ">
@@ -66,6 +67,7 @@ const Index = ({ food }) => {
         />
       </div>
       <div className="md:flex-1 md:text-start text-center">
+
         <Title addClass="text-6xl">{food.title}</Title>
         <span className="text-primary text-2xl font-bold underline underline-offset-1 my-4 inline-block">
           ${price}
@@ -113,6 +115,9 @@ const Index = ({ food }) => {
         )}
 
         <div className="flex gap-x-4 my-6 md:justify-start justify-center">
+
+
+
           {extraItems.map((item) => (
             <label className="flex items-center gap-x-1" key={item._id}>
               <input
@@ -123,6 +128,9 @@ const Index = ({ food }) => {
               <span className="text-sm font-semibold">{item.text}</span>
             </label>
           ))}
+
+
+
         </div>
         <button
           className="btn-primary"
