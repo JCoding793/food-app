@@ -6,8 +6,8 @@ import "nprogress/nprogress.css";
 
 import Layout from "../layout/Layout";
 
-import { Provider } from "react-redux";
-import store from "../redux/store";
+// import { Provider } from "react-redux";
+// import store from "../redux/store";
 import { SessionProvider } from "next-auth/react";
 
 import { ToastContainer } from "react-toastify";
@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   const router = useRouter();
   return (
     <SessionProvider session={session}>
-      <Provider store={store}>
+      {/* <Provider store={store}> */}
         {router.pathname.startsWith("/admin") ? (
           <div className="bg-[#ececec] h-screen">
             <ToastContainer />
@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
             <Component {...pageProps} />
           </Layout>
         )}
-      </Provider>
+      {/* </Provider> */}
     </SessionProvider>
   );
 }

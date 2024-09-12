@@ -1,25 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 import { RiShoppingCart2Fill } from "react-icons/ri";
-import { useSelector, useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
 import { addProduct } from "../../redux/cartSlice";
 
 const MenuItem = ({ product }) => {
-  const cart = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
+  // const cart = useSelector((state) => state.cart);
+  // const dispatch = useDispatch();
 
-  const findCart = cart.products.find((item) => item._id === product._id);
+  // const findCart = cart.products.find((item) => item._id === product._id);
 
   const addToCart = () => {
-    dispatch(
-      addProduct({
-        ...product,
-        extras: [],
-        price: product.prices[0],
-        quantity: 1,
-        foodQuantity: 1,
-      })
-    );
+    // dispatch(
+    //   addProduct({
+    //     ...product,
+    //     extras: [],
+    //     price: product.prices[0],
+    //     quantity: 1,
+    //     foodQuantity: 1,
+    //   })
+    // );
   };
 
   return (
@@ -43,7 +43,7 @@ const MenuItem = ({ product }) => {
           <span>${product.prices[0]}</span>
           <button
             className="btn-primary !w-10 !h-10 !rounded-full !p-0 grid place-content-center absolute bottom-4 right-5"
-            disabled={findCart}
+            // disabled={findCart}
             onClick={addToCart}
           >
             <RiShoppingCart2Fill />
