@@ -188,7 +188,7 @@ const AddProduct = ({ setIsProductModal }) => {
               />
               {errors.title && touched.title && (
                 <span className="text-xs mt-1 text-danger">{errors.title}</span>
-              )}
+              )}      
             </div>
             <div className="flex flex-col text-sm mt-4">
               <span className="font-semibold mb-1">Description</span>
