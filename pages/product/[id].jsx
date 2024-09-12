@@ -1,62 +1,91 @@
-import Image from "next/image";
 import { useState } from "react";
 import Title from "../../components/ui/Title";
 import { addProduct } from "../../redux/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import Image from "next/image";
+const Index = ({data , data1}) => {
 
-const Index = ({ food }) => {
-  const [prices, setPrices] = useState(food.prices);
-  const [price, setPrice] = useState(prices[0]);
-  const [size, setSize] = useState(0);
-  const [extraItems, setExtraItems] = useState(food?.extraOptions);
-  const [extras, setExtras] = useState([]);
-  const cart = useSelector((state) => state.cart);
+ console.log(data, data1)
+  // const [prices, setPrices] = useState(food.prices);
+  // const [price, setPrice] = useState(prices[0]);
+  // const [size, setSize] = useState(0);
+  // const [extraItems, setExtraItems] = useState(food?.extraOptions);
+  // const [extras, setExtras] = useState([]);
+  // const cart = useSelector((state) => state.cart);
 
-  const findCart = cart.products.find((item) => item._id === food._id);
+  // const findCart = cart.products.find((item) => item._id === food._id);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const handleSize = (sizeIndex) => {
-    const difference = prices[sizeIndex] - prices[size];
-    setSize(sizeIndex);
-    changePrice(difference);
-  };
+  // const handleSize = (sizeIndex) => {
+  //   const difference = prices[sizeIndex] - prices[size];
+  //   setSize(sizeIndex);
+  //   changePrice(difference);
+  // };
 
-  const changePrice = (number) => {
-    setPrice(price + number);
-  };
+  // const changePrice = (number) => {
+  //   setPrice(price + number);
+  // };
 
-  const handleChange = (e, item) => {
-    const checked = e.target.checked;
+  // const handleChange = (e, item) => {
+  //   const checked = e.target.checked;
 
-    if (checked) {
-      changePrice(item.price);
-      setExtras([...extras, item]);
-    } else {
-      changePrice(-item.price);
-      setExtras(extras.filter((extra) => extra.id !== item.id));
-    }
-  };
+  //   if (checked) {
+  //     changePrice(item.price);
+  //     setExtras([...extras, item]);
+  //   } else {
+  //     changePrice(-item.price);
+  //     setExtras(extras.filter((extra) => extra.id !== item.id));
+  //   }
+  // };
 
-  const handleClick = () => {
-    dispatch(
-      addProduct({
-        ...food,
-        foodQuantity: 1,
-        title: food.title,
-        img: food.img,
-        extras,
-        price,
-        quantity: 1,
-      })
-    );
-  };
-  console.log(food);
-
+  // const handleClick = () => {
+    // dispatch(
+    //   addProduct({
+    //     ...food,
+    //     foodQuantity: 1,
+    //     title: food.title,
+    //     img: food.img,
+    //     extras,
+    //     price,
+    //     quantity: 1,
+    //   })
+    // );
+  // };
+// md:h-[calc(100vh_-_88px)]
   return (
-    <div className="flex items-center md:h-[calc(100vh_-_88px)] gap-5 py-20 flex-wrap ">
-      <div className="relative md:flex-1 md:w-[80%] md:h-[80%] w-36 h-36 mx-auto">
+    <div className="flex items-center  gap-5 py-20 flex-wrap justify-center">    
+  {/* {data1 && data1.map((item, index)=>{
+
+    return (<div className="mt-5 mx-4">
+      <div className="p-6 bg-secondary text-white rounded-[5px]" key={index}>
+        <p>
+         {item.body}
+        </p>
+        <div className="flex flex-col mt-4">
+          <span className="text-lg font-semibold">{item.email}</span>
+          <span className="text-[15px]">{item.name}</span>
+        </div>
+      </div>
+
+      <div
+        className="relative w-28 h-28 border-4 border-primary rounded-full mt-8 before:content-[''] before:absolute before:top-0 
+      flex justify-center before:-translate-y-3 before:rotate-45 before:bg-primary before:w-5 before:h-5 "
+      >
+        <Image
+         src={"/images/client2.jpg"}
+          alt=""
+          layout="fill"
+          objectFit="contain"
+          className="rounded-full"
+        />
+      </div>
+    </div>)
+  })} */}
+    
+
+      {/* <div className="relative md:flex-1 md:w-[80%] md:h-[80%] w-36 h-36 mx-auto">
         <Image
           src={food?.img}
           alt=""
@@ -131,18 +160,20 @@ const Index = ({ food }) => {
         >
           Add to Cart
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
 
 export const getServerSideProps = async ({ params }) => {
+  const productId = await params.id;
   const res = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_URL}/products/${params.id}`
+    `https://jsonplaceholder.typicode.com/comments?postId=${productId}`
   );
   return {
     props: {
-      food: res.data ? res.data : null,
+      data: productId ? productId : null,
+      data1: res.data ? res.data : null
     },
   };
 };

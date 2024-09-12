@@ -1,6 +1,6 @@
 export const product = [
     {
-      "_id": "66b886a970057748ad7cba18",
+      "_id": "1",
       "title": "Samosa",
       "desc": "Hot, Flavorful snack filled with potatoes and vegetables. Best with chutney or sauce. Arguably the tastiest snack out there!",
       "prices": [ 50 ],
@@ -12,7 +12,7 @@ export const product = [
       
     },
     {
-      "_id": "66b889d470057748ad7cba48",
+      "_id": "2",
       "title": "Spicy Corn",
       "desc": "As the name suggests, this is a blend of sweet corn with different flavored spices to make a masterpiece of a snack: spicy corn.",
       "prices": [ 50 ],
@@ -24,7 +24,7 @@ export const product = [
       
     },
     {
-      "_id": "66b88a7170057748ad7cba51",
+      "_id": "3",
       "title": "Cutlet",
       "desc": "Cutlets, made out of potatoes and served piping hot, also called Aloo ki Tikki, are one of the delicious snacks served here at Snac.",
       "prices": [ 50 ],
@@ -36,7 +36,7 @@ export const product = [
       
     },
     {
-      "_id": "66b88b0d70057748ad7cba64",
+      "_id": "4",
       "title": "Brownie with Ice Cream",
       "desc": "A sweet treat, brownie and ice cream served at our food court can beat any souffle out there in the world. It is one of our bestsellers.",
       "prices": [ 150 ],
@@ -48,7 +48,7 @@ export const product = [
       
     },
     {
-      "_id": "66b88b6e70057748ad7cba7a",
+      "_id": "5",
       "title": "Ice Cream",
       "desc": "Classic dessert, Vanilla Ice cream with optional free toppings offered here at the dessert section of our food court - Snac.",
       "prices": [ 50 ],
@@ -60,7 +60,7 @@ export const product = [
       
     },
     {
-      "_id": "66b88bce70057748ad7cba8f",
+      "_id": "6",
       "title": "South Indian Breakfast",
       "desc": "A meal that is finger lickin' good. Contains idli, chutney, sambar, dosa, cornflakes, and bread jam as well. ",
       "prices": [ 300 ],
@@ -72,7 +72,7 @@ export const product = [
       
     },
     {
-      "_id": "66b88c2f70057748ad7cbaa4",
+      "_id": "7",
       "title": "Chilli Bajji",
       "desc": "Fritters, made out of Chilli and sometimes bananas as well. Highly tasty but on the higher side of the spice spectrum, so Handle with Care!",
       "prices": [ 40 ],
