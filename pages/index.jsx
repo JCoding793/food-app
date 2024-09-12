@@ -3,9 +3,9 @@ import Input from "../components/form/Input";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import Home from "./home";
-import axios from "axios";
-
-export default function Index({ categoryList, productList }) {
+import { category, product } from "../util/data";
+// import axios from "axios";
+export default function Index() {
   return (
     <div className="">
       <Head>
@@ -18,20 +18,21 @@ export default function Index({ categoryList, productList }) {
           crossOrigin="true"
         />
       </Head>
-      <Home categoryList={categoryList} productList={productList} />
+      <Home categoryList={category} productList={product} />
     </div>
   );
 }
 
-export const getServerSideProps = async () => {
-  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/categories`);
-  const product = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_URL}/products`
-  );
-  return {
-    props: {
-      categoryList: res.data ? res.data : [],
-      productList: product.data ? product.data : [],
-    },
-  };
-};
+// export const getServerSideProps = async () => {
+//   const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/categories`);
+//   const product = await axios.get(
+//     `${process.env.NEXT_PUBLIC_API_URL}/products`
+//   );
+//   console.log(res.data)
+//   return {
+//     props: {
+//       categoryList: res.data ? res.data : [],
+//       productList: product.data ? product.data : [],
+//     },
+//   };
+// };

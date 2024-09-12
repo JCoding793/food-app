@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 const Header = () => {
   const [isSearchModal, setIsSearchModal] = useState(false);
   const [isMenuModal, setIsMenuModal] = useState(false);
-  const cart = useSelector((state) => state.cart);
+  // const cart = useSelector((state) => state.cart);
 
   const router = useRouter();
 
@@ -71,7 +71,7 @@ const Header = () => {
           )}
         </nav>
         <div className="flex gap-x-4 items-center">
-          <Link href="/auth/login">
+          <Link href="#">
             <span>
               {router.asPath.includes("auth") ? (
                 <i
@@ -90,13 +90,13 @@ const Header = () => {
               )}
             </span>
           </Link>
-          <Link href="/cart">
+          <Link href="#">
             <span className="relative">
               <FaShoppingCart
                 className={`hover:text-primary transition-all cursor-pointer`}
               />
               <span className="w-4 h-4 text-xs grid place-content-center rounded-full bg-primary absolute -top-2 -right-3 text-black font-bold">
-                {cart.products.length === 0 ? "0" : cart.products.length}
+                {/* {cart.products.length === 0 ? "0" : cart.products.length} */} 2
               </span>
             </span>
           </Link>
