@@ -34,6 +34,7 @@ async function dbConnect() {
       return mongoose;
     });
   }
+
   cached.conn = await cached.promise;
   return cached.conn;
 }
@@ -41,3 +42,4 @@ async function dbConnect() {
 console.log("Connected to MongoDB");
 
 export default dbConnect;
+
