@@ -18,6 +18,8 @@ const MenuWrapper = () => {
   //   );
   // }, []);
 
+
+
   const parseStringToJsonArray = (str) => {
 
     try {
@@ -97,5 +99,7 @@ const MenuWrapper = () => {
     </div>
   );
 };
+
+
 
 export default MenuWrapper;

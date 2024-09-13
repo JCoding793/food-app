@@ -23,6 +23,7 @@ const Products = () => {
   useEffect(() => {
     getProducts();
   }, []);
+  
   const handleDelete = async (id) => {
     try {
       if (confirm("Are you sure you want to delete this product?")) {

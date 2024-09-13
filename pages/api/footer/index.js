@@ -22,6 +22,7 @@ const handler = async (req, res) => {
       console.log(err);
     }
   }
+
 };
 
 export default handler;
